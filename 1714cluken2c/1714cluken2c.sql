@@ -48,7 +48,7 @@ FROM            Invoice INNER JOIN
 GROUP BY Invoice.InvoiceDate, LineItem.Description
 HAVING        (LineItem.Description = N'Garage') AND (Invoice.InvoiceDate BETWEEN CONVERT(DATETIME, '2018-09-01 00:00:00', 102) AND CONVERT(DATETIME, '2018-09-30 00:00:00', 102))
 
---8. Group by InvoiceID, Total Amount Billed in September 2018
+--8. Group by InvoiceID, Total Amount Billed in September of 2018
 SELECT        Invoice.InvoiceId, SUM(LineItem.Amount) AS [Total Amount]
 FROM            Invoice INNER JOIN
                          LineItem ON Invoice.InvoiceId = LineItem.InvoiceId
