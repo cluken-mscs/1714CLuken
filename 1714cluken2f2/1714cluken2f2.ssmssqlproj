@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="1714cluken2f2">
+  <Items>
+    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="DESKTOP-N722OF9:DESKTOP-N722OF9\callu">
+          <Created>2020-10-18T19:40:09.0248102-05:00</Created>
+          <Type>SQL</Type>
+          <Server>DESKTOP-N722OF9</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB>AnimalShelter1714</InitialDB>
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Microsoft SQL Server Management Studio - Query</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="1714cluken2f.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:DESKTOP-N722OF9:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>DESKTOP-N722OF9</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>1714cluken2f.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+      <Items>
+        <FileNode Name="cluken1714ex2f1.png">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>cluken1714ex2f1.png</FullPath>
+        </FileNode>
+        <FileNode Name="cluken1714ex2f2.png">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>cluken1714ex2f2.png</FullPath>
+        </FileNode>
+        <FileNode Name="cluken1714ex2f3.png">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>cluken1714ex2f3.png</FullPath>
+        </FileNode>
+        <FileNode Name="cluken1714ex2f4.png">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>cluken1714ex2f4.png</FullPath>
+        </FileNode>
+        <FileNode Name="cluken1714ex2f5.png">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>cluken1714ex2f5.png</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

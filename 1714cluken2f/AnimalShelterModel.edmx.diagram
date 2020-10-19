@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a019053ed3e14d0fa82bc282c6b61bae" Name="Diagram1" >
+        <EntityTypeShape EntityType="Model1.AnimalType" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.Animal" Width="1.5" PointX="3.5" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.Person" Width="1.5" PointX="6.875" PointY="0.5" />
+        <AssociationConnector Association="Model1.AnimalTypeAnimal" />
+        <AssociationConnector Association="Model1.PersonAnimal" />
+        <EntityTypeShape EntityType="Model1.DonationType" Width="1.5" PointX="0.625" PointY="3.25" />
+        <EntityTypeShape EntityType="Model1.Donation" Width="1.5" PointX="4.5" PointY="3.625" />
+        <AssociationConnector Association="Model1.PersonDonation" />
+        <AssociationConnector Association="Model1.DonationTypeDonation" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
