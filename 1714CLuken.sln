@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1714cluken2g", "1714cluken2g\1714cluken2g.csproj", "{78C55FB4-425B-48AE-A445-76C45BAE98FC}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "1714ex2g", "1714ex2g\1714ex2g.sqlproj", "{2316DD26-3929-4412-AAFE-C0BBA363EA18}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,16 @@ Global
 		{1C7DC1E8-BC29-48E4-83D7-629776218367}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C7DC1E8-BC29-48E4-83D7-629776218367}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C7DC1E8-BC29-48E4-83D7-629776218367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78C55FB4-425B-48AE-A445-76C45BAE98FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78C55FB4-425B-48AE-A445-76C45BAE98FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78C55FB4-425B-48AE-A445-76C45BAE98FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78C55FB4-425B-48AE-A445-76C45BAE98FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2316DD26-3929-4412-AAFE-C0BBA363EA18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2316DD26-3929-4412-AAFE-C0BBA363EA18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2316DD26-3929-4412-AAFE-C0BBA363EA18}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2316DD26-3929-4412-AAFE-C0BBA363EA18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2316DD26-3929-4412-AAFE-C0BBA363EA18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2316DD26-3929-4412-AAFE-C0BBA363EA18}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
