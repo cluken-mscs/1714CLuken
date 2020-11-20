@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="17de331a8ca0493788927d53cde6c1f9" Name="Diagram1" >
+        <EntityTypeShape EntityType="PropertyManager2.Building" Width="1.5" PointX="1.25" PointY="0.625" />
+        <EntityTypeShape EntityType="PropertyManager2.Apartment" Width="1.5" PointX="3.875" PointY="0.5" />
+        <EntityTypeShape EntityType="PropertyManager2.LineItem" Width="1.5" PointX="1" PointY="3.5" />
+        <EntityTypeShape EntityType="PropertyManager2.Invoice" Width="1.5" PointX="3.5" PointY="4" />
+        <EntityTypeShape EntityType="PropertyManager2.Receipt" Width="1.5" PointX="6.75" PointY="3.5" />
+        <AssociationConnector Association="PropertyManager2.BuildingApartment" />
+        <AssociationConnector Association="PropertyManager2.InvoiceLineItem" />
+        <AssociationConnector Association="PropertyManager2.InvoiceReceipt" />
+        <AssociationConnector Association="PropertyManager2.ApartmentInvoice" />
+        <EntityTypeShape EntityType="PropertyManager2.People" Width="1.5" PointX="7" PointY="0.625" />
+        <AssociationConnector Association="PropertyManager2.TenantApartment" />
+        <AssociationConnector Association="PropertyManager2.AdminApartment" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
