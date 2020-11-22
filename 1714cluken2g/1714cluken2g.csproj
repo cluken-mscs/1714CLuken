@@ -62,7 +62,7 @@
     <Compile Include="LineItem.cs">
       <DependentUpon>PropertyManager2Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="People.cs">
+    <Compile Include="Person.cs">
       <DependentUpon>PropertyManager2Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

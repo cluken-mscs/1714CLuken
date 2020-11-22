@@ -27,8 +27,8 @@ namespace _1714cluken2g
         public decimal Rent { get; set; }
     
         public virtual Building Building { get; set; }
-        public virtual People Tenant { get; set; }
-        public virtual People Admin { get; set; }
+        public virtual Person Tenant { get; set; }
+        public virtual Person Admin { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoice> Invoices { get; set; }
     }

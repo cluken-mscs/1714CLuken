@@ -8,7 +8,7 @@
   <EntityContainer Name="PropertyManager2ModelStoreContainer">
     <EntitySet Name="Buildings" EntityType="PropertyManager2Model.Store.Buildings" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Apartments" EntityType="PropertyManager2Model.Store.Apartments" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="People1" EntityType="PropertyManager2Model.Store.People1" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="People" EntityType="PropertyManager2Model.Store.People" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="LineItems" EntityType="PropertyManager2Model.Store.LineItems" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Invoices" EntityType="PropertyManager2Model.Store.Invoices" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Receipts" EntityType="PropertyManager2Model.Store.Receipts" store:Type="Tables" Schema="dbo" />
@@ -17,11 +17,11 @@
       <End Role="Apartment" EntitySet="Apartments" />
     </AssociationSet>
     <AssociationSet Name="PersonApartment" Association="PropertyManager2Model.Store.TenantApartment">
-      <End Role="Person" EntitySet="People1" />
+      <End Role="Person" EntitySet="People" />
       <End Role="Apartment" EntitySet="Apartments" />
     </AssociationSet>
     <AssociationSet Name="PersonApartment1" Association="PropertyManager2Model.Store.AdminApartment">
-      <End Role="Person" EntitySet="People1" />
+      <End Role="Person" EntitySet="People" />
       <End Role="Apartment" EntitySet="Apartments" />
     </AssociationSet>
     <AssociationSet Name="ApartmentInvoice" Association="PropertyManager2Model.Store.ApartmentInvoice">
@@ -61,7 +61,7 @@
     <Property Name="Tenant_Id" Type="int" Nullable="false" />
     <Property Name="Admin_Id" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="People1">
+  <EntityType Name="People">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -111,7 +111,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="TenantApartment">
-    <End Role="Person" Type="PropertyManager2Model.Store.People1" Multiplicity="1" />
+    <End Role="Person" Type="PropertyManager2Model.Store.People" Multiplicity="1" />
     <End Role="Apartment" Type="PropertyManager2Model.Store.Apartments" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Person">
@@ -123,7 +123,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="AdminApartment">
-    <End Role="Person" Type="PropertyManager2Model.Store.People1" Multiplicity="1" />
+    <End Role="Person" Type="PropertyManager2Model.Store.People" Multiplicity="1" />
     <End Role="Apartment" Type="PropertyManager2Model.Store.Apartments" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Person">
@@ -177,17 +177,17 @@
         <EntityContainer Name="PropertyManager2ModelContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Buildings" EntityType="PropertyManager2Model.Building" />
           <EntitySet Name="Apartments" EntityType="PropertyManager2Model.Apartment" />
-          <EntitySet Name="People1" EntityType="PropertyManager2Model.People" />
+          <EntitySet Name="People" EntityType="PropertyManager2Model.Person" />
           <AssociationSet Name="BuildingApartment" Association="PropertyManager2Model.BuildingApartment">
             <End Role="Building" EntitySet="Buildings" />
             <End Role="Apartment" EntitySet="Apartments" />
           </AssociationSet>
           <AssociationSet Name="PersonApartment" Association="PropertyManager2Model.TenantApartment">
-            <End Role="Person" EntitySet="People1" />
+            <End Role="Person" EntitySet="People" />
             <End Role="Apartment" EntitySet="Apartments" />
           </AssociationSet>
           <AssociationSet Name="PersonApartment1" Association="PropertyManager2Model.AdminApartment">
-            <End Role="Person" EntitySet="People1" />
+            <End Role="Person" EntitySet="People" />
             <End Role="Apartment" EntitySet="Apartments" />
           </AssociationSet>
           <EntitySet Name="LineItems" EntityType="PropertyManager2Model.LineItem" />
@@ -232,7 +232,7 @@
           <NavigationProperty Name="Admin" Relationship="PropertyManager2Model.AdminApartment" FromRole="Apartment" ToRole="Person" />
           <NavigationProperty Name="Invoices" Relationship="PropertyManager2Model.ApartmentInvoice" FromRole="Apartment" ToRole="Invoice" />
         </EntityType>
-        <EntityType Name="People">
+        <EntityType Name="Person">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -249,11 +249,11 @@
           <End Type="PropertyManager2Model.Apartment" Role="Apartment" Multiplicity="*" />
         </Association>
         <Association Name="TenantApartment">
-          <End Type="PropertyManager2Model.People" Role="Person" Multiplicity="1" />
+          <End Type="PropertyManager2Model.Person" Role="Person" Multiplicity="1" />
           <End Type="PropertyManager2Model.Apartment" Role="Apartment" Multiplicity="*" />
         </Association>
         <Association Name="AdminApartment">
-          <End Type="PropertyManager2Model.People" Role="Person" Multiplicity="1" />
+          <End Type="PropertyManager2Model.Person" Role="Person" Multiplicity="1" />
           <End Type="PropertyManager2Model.Apartment" Role="Apartment" Multiplicity="*" />
         </Association>
         <EntityType Name="LineItem">
@@ -326,9 +326,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="People1">
-      <EntityTypeMapping TypeName="IsTypeOf(PropertyManager2Model.People)">
-        <MappingFragment StoreEntitySet="People1">
+    <EntitySetMapping Name="People">
+      <EntityTypeMapping TypeName="IsTypeOf(PropertyManager2Model.Person)">
+        <MappingFragment StoreEntitySet="People">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />

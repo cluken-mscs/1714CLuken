@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace _1714cluken3b1b
+namespace _1714cluken3b2
 {
     /// <summary>
     /// Interaction logic for App.xaml

@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace _1714cluken3b1
+namespace _1714cluken3b1b
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,6 +23,7 @@ namespace _1714cluken3b1
     public partial class MainWindow : Window
     {
         PropertyManager2ModelContainer dbContext;
+        System.Windows.Data.CollectionViewSource personViewSource;
 
         public MainWindow()
         {
@@ -32,13 +33,38 @@ namespace _1714cluken3b1
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-            System.Windows.Data.CollectionViewSource peopleViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("peopleViewSource")));
+            personViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("personViewSource")));
             // Load data by setting the CollectionViewSource.Source property:
             dbContext = new PropertyManager2ModelContainer();
-            dbContext.People1.Load();
-            peopleViewSource.Source = dbContext.People1.Local;
+            dbContext.People.Where(p => (p.Apartments1.Count > 0)).Load();
+            personViewSource.Source = dbContext.People.Local;
             dbContext.Configuration.AutoDetectChangesEnabled = true;
+            // personViewSource.Source = [generic data source]
+        }
 
+        private void firstButton_Click(object sender, RoutedEventArgs e)
+        {
+            personViewSource.View.MoveCurrentToFirst();
+        }
+
+        private void backButton_Click(object sender, RoutedEventArgs e)
+        {
+            personViewSource.View.MoveCurrentToPrevious();
+        }
+
+        private void nextButton_Click(object sender, RoutedEventArgs e)
+        {
+            personViewSource.View.MoveCurrentToNext();
+        }
+
+        private void lastButton_Click(object sender, RoutedEventArgs e)
+        {
+            personViewSource.View.MoveCurrentToLast();
+        }
+
+        private void saveButton_Click(object sender, RoutedEventArgs e)
+        {
+            dbContext.SaveChanges();
         }
     }
 }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _1714cluken3b1b.Properties
+namespace _1714cluken3b2.Properties
 {
 
 

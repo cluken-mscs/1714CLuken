@@ -27,7 +27,7 @@ namespace _1714cluken2g
     
         public virtual DbSet<Building> Buildings { get; set; }
         public virtual DbSet<Apartment> Apartments { get; set; }
-        public virtual DbSet<People> People1 { get; set; }
+        public virtual DbSet<Person> People { get; set; }
         public virtual DbSet<LineItem> LineItems { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<Receipt> Receipts { get; set; }

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/23/2020 21:12:00
+-- Date Created: 11/21/2020 17:00:12
 -- Generated from EDMX file: C:\Users\callu\OneDrive\Documents\1714cluken2020\1714CLuken\1714cluken2g\PropertyManager2Model.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,47 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_BuildingApartment]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Apartments] DROP CONSTRAINT [FK_BuildingApartment];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TenantApartment]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Apartments] DROP CONSTRAINT [FK_TenantApartment];
+GO
+IF OBJECT_ID(N'[dbo].[FK_AdminApartment]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Apartments] DROP CONSTRAINT [FK_AdminApartment];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ApartmentInvoice]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Invoices] DROP CONSTRAINT [FK_ApartmentInvoice];
+GO
+IF OBJECT_ID(N'[dbo].[FK_InvoiceLineItem]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[LineItems] DROP CONSTRAINT [FK_InvoiceLineItem];
+GO
+IF OBJECT_ID(N'[dbo].[FK_InvoiceReceipt]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Receipts] DROP CONSTRAINT [FK_InvoiceReceipt];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[Buildings]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Buildings];
+GO
+IF OBJECT_ID(N'[dbo].[Apartments]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Apartments];
+GO
+IF OBJECT_ID(N'[dbo].[People]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[People];
+GO
+IF OBJECT_ID(N'[dbo].[LineItems]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[LineItems];
+GO
+IF OBJECT_ID(N'[dbo].[Invoices]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Invoices];
+GO
+IF OBJECT_ID(N'[dbo].[Receipts]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Receipts];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -51,8 +87,8 @@ CREATE TABLE [dbo].[Apartments] (
 );
 GO
 
--- Creating table 'People1'
-CREATE TABLE [dbo].[People1] (
+-- Creating table 'People'
+CREATE TABLE [dbo].[People] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [FirstName] nvarchar(max)  NOT NULL,
     [LastName] nvarchar(max)  NOT NULL,
@@ -104,9 +140,9 @@ ADD CONSTRAINT [PK_Apartments]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Id] in table 'People1'
-ALTER TABLE [dbo].[People1]
-ADD CONSTRAINT [PK_People1]
+-- Creating primary key on [Id] in table 'People'
+ALTER TABLE [dbo].[People]
+ADD CONSTRAINT [PK_People]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -151,7 +187,7 @@ GO
 ALTER TABLE [dbo].[Apartments]
 ADD CONSTRAINT [FK_TenantApartment]
     FOREIGN KEY ([Tenant_Id])
-    REFERENCES [dbo].[People1]
+    REFERENCES [dbo].[People]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
@@ -166,7 +202,7 @@ GO
 ALTER TABLE [dbo].[Apartments]
 ADD CONSTRAINT [FK_AdminApartment]
     FOREIGN KEY ([Admin_Id])
-    REFERENCES [dbo].[People1]
+    REFERENCES [dbo].[People]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
